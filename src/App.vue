@@ -2,7 +2,10 @@
   <nav>
     |
     <router-link to="/about">About</router-link>
-    <p>testing 123</p>
+    |
+    <router-link to="/login">Login</router-link>
+    |
+    <router-link to="/logout">Logout</router-link>
   </nav>
   <router-view />
 </template>
