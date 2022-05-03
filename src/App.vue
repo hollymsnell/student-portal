@@ -2,7 +2,7 @@
   <nav>
     |
     <router-link to="/about">About</router-link>
-    <p> testing 123</p>
+    <p>testing 123</p>
   </nav>
   <router-view />
 </template>
