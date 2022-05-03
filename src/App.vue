@@ -1,6 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link>
+    <p>test west-branch</p>
     |
     <router-link to="/about">About</router-link>
   </nav>
