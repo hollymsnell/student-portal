@@ -13,13 +13,6 @@ export default {
     this.indexResumes();
   },
   methods: {
-    indexResumes() {
-      axios.get("/resumes").then((response) => {
-        console.log("resumes index", response);
-        this.resumes = response.data;
-      });
-    },
-
     showResume(resume) {
       this.currentResume = resume;
       this.editResumeParams = resume;
@@ -30,7 +23,7 @@ export default {
 
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1>All Resumes</h1>
   </div>
   <div v-for="resume in resumes" v-bind:key="resume.id">
     <button v-on:click="showResume(resume)">Show Resume</button>
