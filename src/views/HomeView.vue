@@ -1,18 +1,33 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
-</template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import axios from "axios";
 export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
+  data: function () {
+    return {
+      message: "Welcome to Vue.js!",
+      editResumeParams: {},
+      resumes: [],
+      currentResume: {},
+    };
+  },
+  created: function () {
+    this.indexResumes();
+  },
+  methods: {
+    showResume(resume) {
+      this.currentResume = resume;
+      this.editResumeParams = resume;
+    },
   },
 };
 </script>
+
+<template>
+  <div class="home">
+    <h1>All Resumes</h1>
+  </div>
+  <div v-for="resume in resumes" v-bind:key="resume.id">
+    <button v-on:click="showResume(resume)">Show Resume</button>
+  </div>
+</template>
+
+<style></style>

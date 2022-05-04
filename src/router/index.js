@@ -4,12 +4,28 @@ import AboutView from "../views/AboutView.vue";
 // import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
+import ShowCapstoneView from "../views/ShowCapstoneView.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: HomeView,
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginView,
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: LogoutView,
+  },
+  {
+    path: "/students/:id",
+    name: "ShowCapstone",
+    component: ShowCapstoneView,
   },
   {
     path: "/about",
