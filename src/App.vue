@@ -1,11 +1,52 @@
 <template>
-  <nav>
-    |
-    <router-link to="/about">About</router-link>
-    <p>testing 123</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ActualizedIn</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <!-- <li v-if="!isLoggedIn" class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li> -->
+          <li v-if="!isLoggedIn" class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li v-if="isLoggedIn" class="nav-item">
+            <a class="nav-link" href="/logout">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
   <router-view />
 </template>
+<script>
+export default {
+  data: function () {
+    return {
+      isLoggedIn: false,
+    };
+  },
+  watch: {
+    $route: function () {
+      this.isLoggedIn = !!localStorage.jwt;
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -13,11 +54,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 nav {
   padding: 30px;
+  font-family: Rubik Bubbles;
 }
 
 nav a {
