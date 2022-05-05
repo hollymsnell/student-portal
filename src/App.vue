@@ -30,15 +30,20 @@
         </ul>
       </div>
     </div>
-  <nav>
-    |
-    <router-link to="/about">About</router-link>
-    |
-    <router-link to="/login">Login</router-link>
-    |
-    <router-link to="/logout">Logout</router-link>
+    <nav>
+      |
+      <router-link to="/about">About</router-link>
+      |
+      <router-link to="/login">Login</router-link>
+      |
+      <router-link to="/logout">Logout</router-link>
+      |
+      <router-link to="/students/capstone/:id">Show Capstone</router-link>
+      |
+      <router-link to="/students/resume/:id">Show Resume</router-link>
+    </nav>
+    <router-view />
   </nav>
-  <router-view />
 </template>
 <script>
 export default {
@@ -75,5 +80,9 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.navbar-brand {
+  color: gold;
 }
 </style>
