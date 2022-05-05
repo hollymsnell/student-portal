@@ -1,18 +1,17 @@
 <script>
-import axios from axios
+import axios from "axios";
 export default {
-  data:function () {
+  data: function () {
     return {
       capstone: {},
     };
   },
-  created: function() {
-    axios.get(`/students/${this.$route.params.id}`).then((response)=>{
+  created: function () {
+    axios.get(`/students/${this.$route.params.id}`).then((response) => {
       this.capstone = response.data;
     });
   },
-
-  };
+};
 </script>
 
 <template>
