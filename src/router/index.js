@@ -5,6 +5,9 @@ import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import ShowCapstoneView from "../views/ShowCapstoneView.vue";
+import EditCapstoneView from "../views/EditCapstoneView.vue";
+import ShowResumeView from "../views/ShowResumeView.vue";
+import EditResumeView from "../views/EditResumeView.vue";
 
 const routes = [
   {
@@ -23,9 +26,24 @@ const routes = [
     component: LogoutView,
   },
   {
-    path: "/students/:id",
+    path: "/students/capstone/:id",
     name: "ShowCapstone",
     component: ShowCapstoneView,
+  },
+  {
+    path: "/students/capstone/:id/edit",
+    name: "EditCapstone",
+    component: EditCapstoneView,
+  },
+  {
+    path: "/students/resume/:id",
+    name: "ShowResume",
+    component: ShowResumeView,
+  },
+  {
+    path: "/students/resume/:id/edit",
+    name: "EditResume",
+    component: EditResumeView,
   },
   {
     path: "/about",
