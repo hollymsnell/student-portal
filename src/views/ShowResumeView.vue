@@ -15,5 +15,7 @@
       <h1>Skills</h1>
       <p>{{ student.skills.skill_name }}</p>
     </div>
+    <router-link to="/students">Back to main portal</router-link>
+    <router-link v-bind:to="`/students/resume/${students.id}/edit`">Edit Resume</router-link>
   </div>
 </template>
