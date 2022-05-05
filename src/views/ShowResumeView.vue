@@ -1,3 +1,19 @@
+<script>
+import axios from "axios";
+export default {
+  data: function () {
+    return {
+      capstone: {},
+    };
+  },
+  created: function () {
+    axios.get(`/students/${this.$route.params.id}`).then((response) => {
+      this.capstone = response.data;
+    });
+  },
+};
+</script>
+
 <template>
   <div class="home">
     <div class="resume">
@@ -17,3 +33,13 @@
     </div>
   </div>
 </template>
+
+<style>
+.resume {
+  border-style: inset;
+  color: #000e1b;
+  padding: 30px;
+  background-color: lightgray;
+  font-family: "Quicksand", sans-serif;
+}
+</style>
