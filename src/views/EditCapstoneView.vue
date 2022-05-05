@@ -28,3 +28,27 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="home">
+    <h1>Edit Capstone</h1>
+    <form v-on:submit.prevent="editCapstone()">
+      <ul>
+        <li v-for="error in errors" v-bind:key="error" style="color: red">
+          {{ error }}
+        </li>
+      </ul>
+      <p>
+        Experience Info:
+        <input type="text" v-model="student.capstone.name" />
+      </p>
+      <p>
+        <input type="text" v-model="student.capstone.description" />
+      </p>
+      <p>
+        <input type="text" v-model="student.capstone.url" />
+      </p>
+      <input type="submit" value="Edit" />
+    </form>
+  </div>
+</template>

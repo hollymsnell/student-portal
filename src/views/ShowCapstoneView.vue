@@ -26,7 +26,7 @@ export default {
 
     <div>
       <router-link to="/students">Back to Main Page</router-link>
-      <router-link v-bind:to="`/students/${student.id}./edit`">Edit Capstone</router-link>
+      <router-link v-bind:to="`/students/capstone/${student.id}./edit`">Edit Capstone</router-link>
     </div>
   </div>
 </template>
