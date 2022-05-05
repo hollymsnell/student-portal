@@ -8,7 +8,7 @@ export default {
     };
   },
   created: function () {
-    axios.get(`students/${this.$route.params.id}`).then((response) => {
+    axios.get(`/students/${this.$route.params.id}`).then((response) => {
       this.student = response.data;
     });
   },
