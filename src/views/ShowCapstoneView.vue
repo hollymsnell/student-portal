@@ -1,18 +1,17 @@
 <script>
-import axios from axios
+import axios from "axios";
 export default {
-  data:function () {
+  data: function () {
     return {
       capstone: {},
     };
   },
-  created: function() {
-    axios.get(`/students/${this.$route.params.id}`).then((response)=>{
-      this.post = response.data;
+  created: function () {
+    axios.get(`/students/${this.$route.params.id}`).then((response) => {
+      this.capstone = response.data;
     });
   },
-
-  };
+};
 </script>
 
 <template>
@@ -25,7 +24,6 @@ export default {
     <div>
       <router-link to="/students">Back to Main Page</router-link>
       <router-link v-bind:to="`/students/${student.id}./edit`">Edit Capstone</router-link>
-      <
     </div>
   </div>
 </template>
